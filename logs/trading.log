@@ -189,3 +189,51 @@ binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional m
 2026-03-28 23:35:24 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.002, 'price': 67000.0}
 2026-03-28 23:35:25 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002674093, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ86ae30950cff6c910f3c40', 'price': '67000.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774721126720}
 2026-03-28 23:35:25 | INFO | trading_bot | Order created successfully | orderId=13002674093
+2026-03-29 09:39:47 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-29 09:42:28 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=SELL type=STOP_LIMIT quantity=0.002 price=68000.0 stop_price=68100.0
+2026-03-29 09:42:31 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-29 09:42:31 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'STOP', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.002, 'price': 68000.0, 'stopPrice': 68100.0}
+2026-03-29 09:42:31 | ERROR | trading_bot | Binance order error for STOP_LIMIT order: APIError(code=-2021): Order would immediately trigger.
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 91, in place_stop_limit_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7946, in futures_create_order
+    return self._request_futures_api("post", "algoOrder", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2026-03-29 09:42:31 | ERROR | trading_bot | Failed to place order: APIError(code=-2021): Order would immediately trigger.
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\cli.py", line 181, in main
+    result = place_stop_limit_order(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 91, in place_stop_limit_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7946, in futures_create_order
+    return self._request_futures_api("post", "algoOrder", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2026-03-29 09:43:24 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-29 09:44:51 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-29 09:45:39 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=STOP_LIMIT quantity=0.002 price=68100.0 stop_price=68000.0
+2026-03-29 09:45:40 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-29 09:45:40 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'STOP', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.002, 'price': 68100.0, 'stopPrice': 68000.0}
+2026-03-29 09:45:40 | INFO | trading_bot | API response | futures_create_order | {'algoId': 1000000036783504, 'clientAlgoId': 'x-Cb7ytekJ73fe998be99d36ff83374e', 'algoType': 'CONDITIONAL', 'orderType': 'STOP', 'symbol': 'BTCUSDT', 'side': 'BUY', 'positionSide': 'BOTH', 'timeInForce': 'GTC', 'quantity': '0.002', 'algoStatus': 'NEW', 'triggerPrice': '68000.00', 'price': '68100.00', 'icebergQuantity': None, 'selfTradePreventionMode': 'EXPIRE_MAKER', 'workingType': 'CONTRACT_PRICE', 'priceMatch': 'NONE', 'closePosition': False, 'priceProtect': False, 'reduceOnly': False, 'createTime': 1774757740618, 'updateTime': 1774757740618, 'triggerTime': 0, 'goodTillDate': 0}
+2026-03-29 09:45:40 | INFO | trading_bot | Order created successfully | orderId=None
