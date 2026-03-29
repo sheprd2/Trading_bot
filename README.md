@@ -11,7 +11,7 @@ CLI-based Python trading bot for Binance USDT-M Futures Testnet.
 
 ## Features
 
-- MARKET and LIMIT order placement
+- MARKET, LIMIT, and STOP_LIMIT order placement
 - Input validation before API calls
 - Structured logging for requests, responses, and errors
 - Modular architecture by responsibility
@@ -66,13 +66,20 @@ python bot/cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
 python bot/cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 90000
 ```
 
+### STOP_LIMIT order
+
+```bash
+python bot/cli.py --symbol BTCUSDT --side BUY --type STOP_LIMIT --quantity 0.001 --price 90500 --stop-price 90000
+```
+
 ## CLI Arguments
 
 - `--symbol` required, uppercase pair like `BTCUSDT`
 - `--side` required, `BUY` or `SELL`
-- `--type` required, `MARKET` or `LIMIT`
+- `--type` required, `MARKET`, `LIMIT`, or `STOP_LIMIT`
 - `--quantity` required, must be `> 0`
-- `--price` required only when `--type LIMIT`, must be `> 0`
+- `--price` required when `--type LIMIT` or `--type STOP_LIMIT`, must be `> 0`
+- `--stop-price` required only when `--type STOP_LIMIT`, must be `> 0`
 
 ## Logging
 

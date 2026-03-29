@@ -5,7 +5,7 @@ import re
 SYMBOL_PATTERN = re.compile(r"^[A-Z0-9]{6,20}$")
 
 VALID_SIDES = {"BUY", "SELL"}
-VALID_ORDER_TYPES = {"MARKET", "LIMIT"}
+VALID_ORDER_TYPES = {"MARKET", "LIMIT", "STOP_LIMIT"}
 
 
 def normalize_upper(value: str) -> str:
@@ -44,10 +44,20 @@ def validate_quantity(quantity: float) -> float:
 
 
 def validate_price(order_type: str, price: float | None) -> float | None:
-	if order_type == "LIMIT":
+	if order_type in {"LIMIT", "STOP_LIMIT"}:
 		if price is None:
-			raise ValueError("Price is required for LIMIT orders.")
+			raise ValueError("Price is required for LIMIT and STOP_LIMIT orders.")
 		if price <= 0:
-			raise ValueError("Price must be greater than 0 for LIMIT orders.")
+			raise ValueError("Price must be greater than 0 for LIMIT and STOP_LIMIT orders.")
 		return price
+	return None
+
+
+def validate_stop_price(order_type: str, stop_price: float | None) -> float | None:
+	if order_type == "STOP_LIMIT":
+		if stop_price is None:
+			raise ValueError("Stop price is required for STOP_LIMIT orders.")
+		if stop_price <= 0:
+			raise ValueError("Stop price must be greater than 0 for STOP_LIMIT orders.")
+		return stop_price
 	return None

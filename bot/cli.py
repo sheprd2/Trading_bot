@@ -5,12 +5,13 @@ import sys
 
 from client import get_futures_client
 from logging_config import configure_logging
-from orders import place_limit_order, place_market_order
+from orders import place_limit_order, place_market_order, place_stop_limit_order
 from validators import (
 	validate_order_type,
 	validate_price,
 	validate_quantity,
 	validate_side,
+	validate_stop_price,
 	validate_symbol,
 )
 
@@ -21,9 +22,19 @@ def build_parser() -> argparse.ArgumentParser:
 	)
 	parser.add_argument("--symbol", required=True, help="Trading pair symbol (e.g. BTCUSDT)")
 	parser.add_argument("--side", required=True, help="Order side: BUY or SELL")
-	parser.add_argument("--type", dest="order_type", required=True, help="MARKET or LIMIT")
+	parser.add_argument(
+		"--type",
+		dest="order_type",
+		required=True,
+		help="MARKET, LIMIT, or STOP_LIMIT",
+	)
 	parser.add_argument("--quantity", type=float, required=True, help="Order quantity")
-	parser.add_argument("--price", type=float, help="Required when --type LIMIT")
+	parser.add_argument("--price", type=float, help="Required when --type LIMIT or STOP_LIMIT")
+	parser.add_argument(
+		"--stop-price",
+		type=float,
+		help="Required when --type STOP_LIMIT",
+	)
 	return parser
 
 
@@ -39,14 +50,16 @@ def main() -> None:
 		order_type = validate_order_type(args.order_type)
 		quantity = validate_quantity(args.quantity)
 		price = validate_price(order_type, args.price)
+		stop_price = validate_stop_price(order_type, args.stop_price)
 
 		logger.info(
-			"Validated input | symbol=%s side=%s type=%s quantity=%s price=%s",
+			"Validated input | symbol=%s side=%s type=%s quantity=%s price=%s stop_price=%s",
 			symbol,
 			side,
 			order_type,
 			quantity,
 			price,
+			stop_price,
 		)
 
 		client = get_futures_client()
@@ -58,13 +71,22 @@ def main() -> None:
 				side=side,
 				quantity=quantity,
 			)
-		else:
+		elif order_type == "LIMIT":
 			result = place_limit_order(
 				client=client,
 				symbol=symbol,
 				side=side,
 				quantity=quantity,
 				price=price,  # Guaranteed by validation for LIMIT orders.
+			)
+		else:
+			result = place_stop_limit_order(
+				client=client,
+				symbol=symbol,
+				side=side,
+				quantity=quantity,
+				price=price,  # Guaranteed by validation for STOP_LIMIT orders.
+				stop_price=stop_price,  # Guaranteed by validation for STOP_LIMIT orders.
 			)
 
 		logger.info("Order created successfully | orderId=%s", result.get("orderId"))

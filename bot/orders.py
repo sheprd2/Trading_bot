@@ -15,6 +15,7 @@ class OrderRequest:
 	order_type: str
 	quantity: float
 	price: float | None = None
+	stop_price: float | None = None
 
 
 LOGGER = logging.getLogger("trading_bot")
@@ -63,4 +64,33 @@ def place_limit_order(
 		return response
 	except (BinanceAPIException, BinanceOrderException) as exc:
 		LOGGER.exception("Binance order error for LIMIT order: %s", exc)
+		raise
+
+
+def place_stop_limit_order(
+	client: Client,
+	symbol: str,
+	side: str,
+	quantity: float,
+	price: float,
+	stop_price: float,
+) -> dict[str, Any]:
+	"""Place a STOP-LIMIT order on Binance USDT-M futures."""
+	payload = {
+		"symbol": symbol,
+		"side": side,
+		"type": "STOP",
+		"timeInForce": "GTC",
+		"newOrderRespType": "RESULT",
+		"quantity": quantity,
+		"price": price,
+		"stopPrice": stop_price,
+	}
+	LOGGER.info("API request | futures_create_order | payload=%s", payload)
+	try:
+		response = client.futures_create_order(**payload)
+		LOGGER.info("API response | futures_create_order | %s", response)
+		return response
+	except (BinanceAPIException, BinanceOrderException) as exc:
+		LOGGER.exception("Binance order error for STOP_LIMIT order: %s", exc)
 		raise
