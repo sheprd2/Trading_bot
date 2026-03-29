@@ -36,7 +36,7 @@ def place_market_order(client: Client, symbol: str, side: str, quantity: float) 
 		LOGGER.info("API response | futures_create_order | %s", response)
 		return response
 	except (BinanceAPIException, BinanceOrderException) as exc:
-		LOGGER.exception("Binance order error for MARKET order: %s", exc)
+		LOGGER.error("Binance order error for MARKET order: %s", exc)
 		raise
 
 
@@ -63,7 +63,7 @@ def place_limit_order(
 		LOGGER.info("API response | futures_create_order | %s", response)
 		return response
 	except (BinanceAPIException, BinanceOrderException) as exc:
-		LOGGER.exception("Binance order error for LIMIT order: %s", exc)
+		LOGGER.error("Binance order error for LIMIT order: %s", exc)
 		raise
 
 
@@ -92,5 +92,5 @@ def place_stop_limit_order(
 		LOGGER.info("API response | futures_create_order | %s", response)
 		return response
 	except (BinanceAPIException, BinanceOrderException) as exc:
-		LOGGER.exception("Binance order error for STOP_LIMIT order: %s", exc)
+		LOGGER.error("Binance order error for STOP_LIMIT order: %s", exc)
 		raise

@@ -201,7 +201,7 @@ def main() -> None:
 		print(f"Validation error: {exc}")
 		sys.exit(2)
 	except Exception as exc:
-		logger.exception("Failed to place order: %s", exc)
+		logger.error("Failed to place order: %s", exc)
 		print(f"Execution error: {exc}")
 		sys.exit(1)
 

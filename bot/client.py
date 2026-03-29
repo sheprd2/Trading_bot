@@ -31,8 +31,8 @@ def get_futures_client() -> Client:
 	try:
 		client.futures_ping()
 		LOGGER.info("Connected to Binance Futures Testnet successfully.")
-	except BinanceAPIException:
-		LOGGER.exception("Failed to connect to Binance Futures Testnet.")
+	except BinanceAPIException as exc:
+		LOGGER.error("Failed to connect to Binance Futures Testnet: %s", exc)
 		raise
 
 	return client
