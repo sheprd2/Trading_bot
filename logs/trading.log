@@ -1,0 +1,191 @@
+2026-03-28 21:56:41 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 21:56:41 | INFO | trading_bot | Phase 1 scaffold CLI invoked with args: {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.001, 'price': None}
+2026-03-28 22:08:43 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:09:00 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:09:00 | ERROR | trading_bot | Validation error: Invalid side 'BAD'. Expected one of: ['BUY', 'SELL']
+2026-03-28 22:09:28 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:09:28 | ERROR | trading_bot | Validation error: Invalid side 'BAD'. Expected one of: ['BUY', 'SELL']
+2026-03-28 22:13:07 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:13:07 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.001 price=None
+2026-03-28 22:13:13 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:13:13 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001}
+2026-03-28 22:13:14 | INFO | trading_bot | API response | futures_create_order | {}
+2026-03-28 22:13:14 | INFO | trading_bot | Order created successfully | orderId=None
+2026-03-28 22:13:39 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:13:39 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=SELL type=LIMIT quantity=0.001 price=200000.0
+2026-03-28 22:13:44 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:13:44 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': 0.001, 'price': 200000.0}
+2026-03-28 22:13:44 | INFO | trading_bot | API response | futures_create_order | {}
+2026-03-28 22:13:44 | INFO | trading_bot | Order created successfully | orderId=None
+2026-03-28 22:19:07 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:19:07 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.001 price=None
+2026-03-28 22:19:13 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:19:13 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.001}
+2026-03-28 22:19:14 | INFO | trading_bot | API response | futures_create_order | {}
+2026-03-28 22:19:14 | INFO | trading_bot | Order created successfully | orderId=None
+2026-03-28 22:19:20 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:19:20 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=SELL type=LIMIT quantity=0.001 price=200000.0
+2026-03-28 22:19:23 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:19:23 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.001, 'price': 200000.0}
+2026-03-28 22:19:24 | INFO | trading_bot | API response | futures_create_order | {}
+2026-03-28 22:19:24 | INFO | trading_bot | Order created successfully | orderId=None
+2026-03-28 22:19:31 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:19:31 | ERROR | trading_bot | Validation error: Invalid side 'BAD'. Expected one of: ['BUY', 'SELL']
+2026-03-28 22:19:35 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:19:35 | ERROR | trading_bot | Validation error: Price is required for LIMIT orders.
+2026-03-28 22:19:41 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:19:41 | ERROR | trading_bot | Validation error: Quantity must be greater than 0.
+2026-03-28 22:34:49 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:34:49 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=SELL type=LIMIT quantity=0.001 price=200000.0
+2026-03-28 22:34:53 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:34:53 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.001, 'price': 200000.0}
+2026-03-28 22:34:53 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002580031, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ988c879853cd89a7d6c432', 'price': '200000.00', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774717494824}
+2026-03-28 22:34:53 | INFO | trading_bot | Order created successfully | orderId=13002580031
+2026-03-28 22:47:52 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:47:52 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.001 price=None
+2026-03-28 22:47:54 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:47:54 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.001}
+2026-03-28 22:47:55 | ERROR | trading_bot | Binance order error for MARKET order: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 22:47:55 | ERROR | trading_bot | Failed to place order: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\cli.py", line 55, in main
+    result = place_market_order(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 22:49:31 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:49:31 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=50.0 price=None
+2026-03-28 22:49:34 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:49:34 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 50.0}
+2026-03-28 22:49:35 | ERROR | trading_bot | Binance order error for MARKET order: APIError(code=-2019): Margin is insufficient.
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2019): Margin is insufficient.
+2026-03-28 22:49:35 | ERROR | trading_bot | Failed to place order: APIError(code=-2019): Margin is insufficient.
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\cli.py", line 55, in main
+    result = place_market_order(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2019): Margin is insufficient.
+2026-03-28 22:51:21 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:51:21 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.001 price=None
+2026-03-28 22:51:22 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:51:22 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.001}
+2026-03-28 22:51:23 | ERROR | trading_bot | Binance order error for MARKET order: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 22:51:23 | ERROR | trading_bot | Failed to place order: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+Traceback (most recent call last):
+  File "C:\Users\cppra\trading_bot\bot\cli.py", line 55, in main
+    result = place_market_order(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\trading_bot\bot\orders.py", line 34, in place_market_order
+    response = client.futures_create_order(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cppra\AppData\Local\Programs\Python\Python311\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 22:52:41 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:52:41 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.002 price=None
+2026-03-28 22:52:43 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:52:43 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.002}
+2026-03-28 22:52:44 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002608439, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'x-Cb7ytekJd0abe4705de2aa6104f3dd', 'price': '0.00', 'avgPrice': '66831.70000', 'origQty': '0.002', 'executedQty': '0.002', 'cumQty': '0.002', 'cumQuote': '133.66340', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774718565479}
+2026-03-28 22:52:44 | INFO | trading_bot | Order created successfully | orderId=13002608439
+2026-03-28 22:54:08 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 22:54:08 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.002 price=None
+2026-03-28 22:54:09 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 22:54:09 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.002}
+2026-03-28 22:54:09 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002610410, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'x-Cb7ytekJb87b6d5e4f545b087d609b', 'price': '0.00', 'avgPrice': '66838.40000', 'origQty': '0.002', 'executedQty': '0.002', 'cumQty': '0.002', 'cumQuote': '133.67680', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774718651162}
+2026-03-28 22:54:09 | INFO | trading_bot | Order created successfully | orderId=13002610410
+2026-03-28 23:16:49 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 23:16:49 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=BUY type=MARKET quantity=0.002 price=None
+2026-03-28 23:16:51 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 23:16:51 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'newOrderRespType': 'RESULT', 'quantity': 0.002}
+2026-03-28 23:16:51 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002644780, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'x-Cb7ytekJ626d0227a3e0e2fdabe589', 'price': '0.00', 'avgPrice': '66838.30000', 'origQty': '0.002', 'executedQty': '0.002', 'cumQty': '0.002', 'cumQuote': '133.67660', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774720013012}
+2026-03-28 23:16:51 | INFO | trading_bot | Order created successfully | orderId=13002644780
+2026-03-28 23:35:01 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 23:35:22 | INFO | trading_bot | Logging configured. Output file: logs\trading.log
+2026-03-28 23:35:22 | INFO | trading_bot | Validated input | symbol=BTCUSDT side=SELL type=LIMIT quantity=0.002 price=67000.0
+2026-03-28 23:35:24 | INFO | trading_bot | Connected to Binance Futures Testnet successfully.
+2026-03-28 23:35:24 | INFO | trading_bot | API request | futures_create_order | payload={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'newOrderRespType': 'RESULT', 'quantity': 0.002, 'price': 67000.0}
+2026-03-28 23:35:25 | INFO | trading_bot | API response | futures_create_order | {'orderId': 13002674093, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ86ae30950cff6c910f3c40', 'price': '67000.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774721126720}
+2026-03-28 23:35:25 | INFO | trading_bot | Order created successfully | orderId=13002674093
